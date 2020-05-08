@@ -1,36 +1,36 @@
 [
   {
-    "id": 1,
+    "id": "8e10c0d7-3038-442d-a1e9-6a07bf7125dc",
     "equip": "tv",
     "watts": 300,
     "on": false
   },
   {
-    "id": 2,
+    "id": "5e1a16b5-2635-400f-a735-3fabcd60257c",
     "equip": "laptop",
     "watts": 120,
     "on": true
   },
   {
-    "id": 3,
+    "id": "2074cb33-7b46-45d9-9171-e7a9505a68f5",
     "equip": "fridge",
     "watts": 500,
     "on": true
   },
   {
-    "id": 4,
-    "equip": "tv1",
-    "watts": 300,
-    "on": true
-  },
-  {
-    "id": 5,
+    "id": "239a4687-a910-4eae-8441-4a557ea5ce2f",
     "equip": "tv7",
     "watts": 350,
     "on": true
   },
   {
-    "id": 6,
+    "id": "rxdfsdfsdfssdfsdf",
+    "equip": "fridge",
+    "watts": 350,
+    "on": true
+  },
+  {
+    "id": "dbb6633e-8406-48db-a925-44ff0ab1d082",
     "equip": "fridge",
     "watts": 350,
     "on": true

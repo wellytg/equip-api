@@ -3,6 +3,7 @@ const Joi = require("joi"); //Import Joi
 const app = express(); //Create Express Application on the app variable
 app.use(express.json()); //used the json file
 const fs = require("fs");
+const uuidv4 = require("uuid");
 
 //Give data to the server
 const rawdata = fs.readFileSync("./equipment.json");
@@ -20,7 +21,7 @@ app.get("/api/equipment", (req, res) => {
 });
 // Display the Information Of Specific equip when you mention the id.
 app.get("/api/equipment/:id", (req, res) => {
-  const equip = equipment.find((c) => c.id === parseInt(req.params.id));
+  const equip = equipment.find((c) => c.id === req.params.id);
   //If there is no valid equip ID, then display an error with the following message
   if (!equip)
     res
@@ -41,7 +42,7 @@ app.post("/api/equipment", (req, res) => {
   }
   //Increment the equip id
   const equip = {
-    id: equipment.length + 1,
+    id: uuidv4.v4(),
     equip: req.body.equip,
     watts: req.body.watts,
     on: req.body.on,
@@ -58,7 +59,7 @@ app.post("/api/equipment", (req, res) => {
 //Update Request Handler
 // Update Existing equip Information
 app.put("/api/equipment/:id", (req, res) => {
-  const equip = equipment.find((c) => c.id === parseInt(req.params.id));
+  const equip = equipment.find((c) => c.id === req.params.id);
   if (!equip)
     res
       .status(404)
@@ -81,7 +82,7 @@ app.put("/api/equipment/:id", (req, res) => {
 //Delete Request Handler
 // Delete equip Details
 app.delete("/api/equipment/:id", (req, res) => {
-  const equip = equipment.find((c) => c.id === parseInt(req.params.id));
+  const equip = equipment.find((c) => c.id === req.params.id);
   if (!equip)
     res
       .status(404)
